@@ -34,7 +34,8 @@ app.post("chat", async (req, res) => {
       };
       
       for await (const event of replicate.stream("meta/meta-llama-3-8b", { input })) {
-        process.stdout.write(event.toString());
+        //process.stdout.write(event.toString());
+        res.write(event.toString());
       };
     }
 });

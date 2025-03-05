@@ -4,6 +4,9 @@ import Replicate from "replicate";
 
 
 const app = express();
+const replicate = new Replicate({
+    auth: process.env.REPLICATE_API_KEY,
+});
 
 // To pass the middleware
 app.use(express.json());
@@ -40,9 +43,7 @@ app.post("chat", async (req, res) => {
     }
 });
 
-    const replicate = new Replicate({
-        auth: process.env.REPLICATE_API_KEY,
-    });
+    
 
 
     const input = {
